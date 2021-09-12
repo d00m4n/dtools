@@ -6,6 +6,17 @@ import base64
 import zlib
 import datetime
 
+class color: # colorize text
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    WHITE = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    CYAN = '\033[96m'
+
 #generate md5 hash
 def md5(fname):
     import hashlib
