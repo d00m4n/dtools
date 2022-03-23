@@ -17,6 +17,17 @@ class color: # colorize text
     UNDERLINE = '\033[4m'
     CYAN = '\033[96m'
 
+# convert epoc date to a human readeable value
+def epochToHuman(epochdate):
+    from datetime import datetime
+    epochdate = int(str(epochdate)[0:10])  # remove milliseconds
+    try:
+        returnValue = datetime.fromtimestamp(int(epochdate))
+    except Exception as errorEx:
+        # print(f'{errorEx} ({epochdate})')
+        exit()
+    return returnValue
+
 #generate md5 hash
 def md5(fname):
     import hashlib
@@ -114,6 +125,14 @@ class Folder():    #first class test
                 if verbose: print (f"Successfully created the directory {directory}")
                 return True
         if verbose: print(f"folder {directory} already exist.")
+    def extract(self,input):
+        splitInput=input.split("/")
+        if len(splitInput) > 1:
+            extractedPath="/".join(splitInput[0:-1])
+            self.new(extractedPath,verbose=True)
+
+        else:
+            print(f"{input} is a file")
 
 
 def getFileSize(file):
