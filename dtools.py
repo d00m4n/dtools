@@ -125,14 +125,15 @@ class Folder():    #first class test
                 if verbose: print (f"Successfully created the directory {directory}")
                 return True
         if verbose: print(f"folder {directory} already exist.")
-    def extract(self,input):
-        splitInput=input.split("/")
+        
+    def extract(self,inputFile):
+        splitInput=inputFile.split("/")
         if len(splitInput) > 1:
             extractedPath="/".join(splitInput[0:-1])
             self.new(extractedPath,verbose=True)
 
         else:
-            print(f"{input} is a file")
+            print(f"{inputFile} is a file")
 
 
 def getFileSize(file):
