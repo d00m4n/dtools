@@ -7,3 +7,6 @@ from .dtools import Folder
 from .dtools import setcolor
 from dtools.tabout import tabout
 from .getBanner import getBanner
+from .dtools import fivonacci
+from .dtools import fivoWait
+from .dtools import color
