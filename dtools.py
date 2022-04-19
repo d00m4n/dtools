@@ -16,7 +16,26 @@ class color: # colorize text
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
     CYAN = '\033[96m'
+    ORANGE = '\033[38;5;214m'
 
+    def num(value):
+        return f'\033[38;5;{value}m'
+
+
+def setcolor(text, color="white"):   
+    colors= {"purple":'\033[95m',"blue" : '\033[94m',"green" : '\033[92m' ,"yellow" : '\033[93m',"red" : '\033[91m',"white" : '\033[0m',"cyan" : '\033[96m'}#,BOLD = '\033[1m',UNDERLINE = '\033[4m'}
+    return (colors[color.lower()]+text+colors["white"])
+
+
+
+# color reference
+# def colors_256(color_):
+#     num1 = str(color_)
+#     num2 = str(color_).ljust(3, ' ')
+#     if color_ % 16 == 0:
+#         return(f"\033[38;5;{num1}m {num2} \033[0;0m\n")
+#     else:
+#         return(f"\033[38;5;{num1}m {num2} \033[0;0m")
 # convert epoc date to a human readeable value
 def epochToHuman(epochdate):
     from datetime import datetime
@@ -115,6 +134,7 @@ class Folder():    #first class test
         return self.os.path.exists(directory)
 
     def new(self,directory,verbose=False):
+        # todo recoursive folder creation
         if not self.exists(directory):
             try:
                 self.os.mkdir(directory)

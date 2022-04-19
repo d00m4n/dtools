@@ -4,3 +4,6 @@ from .dtools import showError
 from .dtools import downloadDataImage
 from .dtools import getCrc 
 from .dtools import Folder
+from .dtools import setcolor
+from dtools.tabout import tabout
+from .getBanner import getBanner
