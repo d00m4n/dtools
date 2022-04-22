@@ -17,16 +17,18 @@ class color: # colorize text
     UNDERLINE = '\033[4m'
     CYAN = '\033[96m'
     ORANGE = '\033[38;5;214m'
+    GREY = '\033[38;5;238m'
 
     def num(value):
         return f'\033[38;5;{value}m'
 
 
 def setcolor(text, color="white"):   
-    colors= {"purple":'\033[95m',"blue" : '\033[94m',"green" : '\033[92m' ,"yellow" : '\033[93m',"red" : '\033[91m',"white" : '\033[0m',"cyan" : '\033[96m'}#,BOLD = '\033[1m',UNDERLINE = '\033[4m'}
+    colors= {"purple":'\033[95m',"blue" : '\033[94m',"green" : '\033[92m' ,"yellow" : '\033[93m',"red" : '\033[91m',"white" : '\033[0m',"cyan" : '\033[96m',"grey" : '\033[38;5;238m'}#,BOLD = '\033[1m',UNDERLINE = '\033[4m'}
     return (colors[color.lower()]+text+colors["white"])
 
-
+print(setcolor("jau","grey"))
+exit()
 
 # color reference
 # def colors_256(color_):
