@@ -1,4 +1,5 @@
-from dtools import color,setcolor
+# from dtools import color,setcolor
+from dtools import setcolor
 
 def getBanner(
     text,
@@ -29,4 +30,4 @@ def getBanner(
     print()
 
 
-getBanner("D00m4n",preTxt="|",postTxt="|",head=">",end="<",textColor="blue")
+# getBanner("D00m4n",preTxt="|",postTxt="|",head=">",end="<",textColor="grey")

@@ -5,8 +5,11 @@ from .dtools import downloadDataImage
 from .dtools import getCrc 
 from .dtools import Folder
 from .dtools import setcolor
-from dtools.tabout import tabout
+from .tabout import tabout
 from .getBanner import getBanner
 from .dtools import fivonacci
 from .dtools import fivoWait
 from .dtools import color
+from .dtools import loadFile
+from .dtools import saveFile
+from .dtools import showError
