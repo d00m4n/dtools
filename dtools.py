@@ -101,8 +101,8 @@ def cfgSave(file,dicc):
         returnList.append(f"{line}={dicc[line]}")
     saveFile(file,returnList)
 
-def saveFile(file,text,raw=False):
-    with open(file, "w") as txt_file:
+def saveFile(file,text,raw=False,type="w"):
+    with open(file, type) as txt_file:
         if raw:
             txt_file.write(str(text))
         else :
@@ -133,10 +133,9 @@ class Folder():    #first class test
         return self.os.path.exists(directory)
 
     def new(self,directory,verbose=False):
-        # todo recoursive folder creation
         if not self.exists(directory):
             try:
-                self.os.mkdir(directory)
+                self.os.makedirs(directory)
             except OSError:
                 if verbose: print (f"Creation of the directory {directory} failed.")
                 return False
