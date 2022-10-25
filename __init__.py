@@ -13,3 +13,4 @@ from .dtools import color
 from .dtools import loadFile
 from .dtools import saveFile
 from .dtools import showError
+from .dtools import fileExists

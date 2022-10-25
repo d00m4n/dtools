@@ -157,12 +157,17 @@ class Folder():    #first class test
 def getFileSize(file):
     return os.path.getsize(file)  
     
+def fileExists(directory):
+    return os.path.exists(directory)
+
 def folderExists(directory):
     return os.path.exists(directory)
+
 def folderCreate(directory):
+
     if not os.path.exists(directory):
         try:
-            os.mkdir(directory)
+            os.makedirs(directory)
         except OSError:
             print (f"Creation of the directory {directory} failed.")
             return False
@@ -204,6 +209,7 @@ def fivoWait(cycle,timefactor=1):
     if timefactor==0:
         timefactor=random.uniform(0,1)
     _wait((time-1)*timefactor,(time)*timefactor)
+
 def getCrc(file,buffersize = 65536):  # get crc value of a file
     try:
         with open(file, 'rb') as afile:
