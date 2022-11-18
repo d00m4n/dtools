@@ -22,6 +22,9 @@ class color: # colorize text
     def num(value):
         return f'\033[38;5;{value}m'
 
+def scriptName():
+    # Return scripts name
+    return os.path.basename(__file__).split(".")[0]
 
 def setcolor(text, color="white"):   
     colors= {"purple":'\033[95m',"blue" : '\033[94m',"green" : '\033[92m' ,"yellow" : '\033[93m',"red" : '\033[91m',"white" : '\033[0m',"cyan" : '\033[96m',"grey" : '\033[38;5;238m',"orange" : '\033[38;5;214m'}#,BOLD = '\033[1m',UNDERLINE = '\033[4m'}
