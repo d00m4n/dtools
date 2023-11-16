@@ -51,4 +51,10 @@ def tabout(
 
     print(ident+setcolor(head,headcolor.lower())+setcolor(final_text,textcolor.lower())+" "*spaces,separator,setcolor(str(value),valuecolor.lower())+color.ENDC)
 
-# tabout("Closed",textcolor="green",textsize=14,head="·",ident=2)
+
+def main():
+    tabout("Closed",textcolor="green",textsize=14,head="·",ident=2)
+
+if __name__ == "__main__":
+    main()
+

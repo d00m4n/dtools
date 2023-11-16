@@ -1,4 +1,8 @@
-# from dtools import color,setcolor
+"""
+Show banner
+"""
+
+import sys
 from dtools import setcolor
 
 def getBanner(
@@ -11,7 +15,7 @@ def getBanner(
     end="",
     textColor="white",
     spaces=True
-    ): #print a banner 
+    ): #print a banner
 
 
     spacesLen=0
@@ -20,7 +24,7 @@ def getBanner(
     preTxtLen=len(preTxt)
     headLen=len(head)
     endLen=len(end)
-    if spaces: 
+    if spaces:
        spacesLen=2
        space=" "
     preLines=int((lines - textLen -preTxtLen -spacesLen - headLen - endLen)/2)
@@ -30,4 +34,6 @@ def getBanner(
     print()
 
 
-# getBanner("D00m4n",preTxt="|",postTxt="|",head=">",end="<",textColor="grey")
+if __name__ == "__main__":
+    getBanner("D00m4n",preTxt="|",postTxt="|",head=">",end="<",textColor="grey")
+    sys.exit()

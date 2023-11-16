@@ -14,3 +14,8 @@ from .dtools import loadFile
 from .dtools import saveFile
 from .dtools import showError
 from .dtools import fileExists
+from .dtools import cfgRead
+from .dtools import cfgSave
+from .dtools import md5
+from .dtools import clear_host
+from .tabout import tabout

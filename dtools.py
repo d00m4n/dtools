@@ -6,6 +6,16 @@ import base64
 import zlib
 import datetime
 import inspect #used for scriptname function
+from platform import system as OS # needed for clear_host function
+def clear_host():
+    """
+    clean screen based on system
+    """
+    print( OS() == "Windows")
+    if OS() == "Windows":
+        os.system('cls')
+    else:
+        os.system('clear')
 
 class color: # colorize text
     HEADER = '\033[95m'
