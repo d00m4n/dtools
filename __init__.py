@@ -1,4 +1,5 @@
 from .dtools import epochToHuman
+from .dtools import script_name
 from .dtools import wait
 from .dtools import showError
 from .dtools import downloadDataImage
@@ -19,3 +20,5 @@ from .dtools import cfgSave
 from .dtools import md5
 from .dtools import clear_host
 from .tabout import tabout
+# from .colorme import colorme
+from .showbanner import show_banner

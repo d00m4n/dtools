@@ -33,7 +33,10 @@ class color: # colorize text
     def num(value):
         return f'\033[38;5;{value}m'
 
-def scriptName():
+def script_name() -> str:
+    """
+    return script name
+    """
     # Return scripts name
     filename = inspect.stack()[1].filename 
     return os.path.basename(filename).split(".")[0]
