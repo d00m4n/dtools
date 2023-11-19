@@ -9,24 +9,35 @@ from pyfiglet import Figlet # SHOW TEXT BANNER
 
 # Importaciones personalizadas
 from dtools import script_name
-def show_banner(stext=None,font_name='graffiti',version=""):
+from dtools import cfgRead
+def show_banner(banner_text=None,font_name='graffiti',version="",by_name="by dr_d00m4n"):
     """
     Shows script banner
     """
-    if stext is None:
-        filename = stack()[1].filename 
-        stext=path.basename(filename).split(".")[0].upper()
+    if banner_text is None:
+        filename = stack()[1].filename
+        folder_path=path.dirname(filename)
+        banner_text=path.basename(filename).split(".")[0].upper()
+
+    try:
+        version=cfgRead(f"{folder_path}/version.py")["__version__"]
+        
+    except:
+        version=""
+
+    name_len=len(by_name)
     print(colorme.GREEN)
     f = Figlet(font=font_name)
-    banner=f.renderText(stext)
+    banner=f.renderText(banner_text)
+    tab=int((len(banner)/6)-name_len)-len(version)
     print(banner)
-    print(__version__)
+    print(version.replace("'","")+" "*tab+by_name)
     print(colorme.ENDC)
 
 if __name__ == "__main__":
     from colorme import colorme
     
-    show_banner(script_name().upper())
+    show_banner()
     exit()
 
 from dtools.colorme import colorme
