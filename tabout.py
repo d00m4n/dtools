@@ -24,8 +24,13 @@ def tabout(
     skin="",
     ident=0,
     autosize=False,
-    silent=False    
+    silent=None    
     ):
+    """
+    show tabed text 
+    Text : Value
+
+    """
     ident=" "*ident
     final_text=text
     spaces=(textsize - len(text)-len(ident))
@@ -46,14 +51,15 @@ def tabout(
         head+=" "
         spaces-=len(head)   
     if value=="":
-    # if value=="" or autosize: 
         separator=""
         final_text=text
-    if silent==False:
+    if autosize: 
+        final_text=text
+    if silent is None:
         print(ident+setcolor(head,headcolor.lower())+setcolor(final_text,textcolor.lower())+" "*spaces,separator,setcolor(str(value),valuecolor.lower())+color.ENDC)
 
 def main():
-    tabout("Closed",textcolor="green",textsize=14,head="·",ident=2)
+    tabout("Root folder","/",textcolor="green",head="·",ident=2,autosize=True)
 
 if __name__ == "__main__":
     main()
