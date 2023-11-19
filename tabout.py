@@ -14,7 +14,8 @@ def setcolor(text, color="white"):
     return (colors[color.lower()]+text+colors["white"])
 
 def tabout(
-    text,value="",separator=":",
+    text,value="",
+    separator=":",
     textcolor="white",
     valuecolor="cyan",
     head="",
@@ -22,7 +23,8 @@ def tabout(
     textsize=8,
     skin="",
     ident=0,
-    autosize=False    
+    autosize=False,
+    silent=False    
     ):
     ident=" "*ident
     final_text=text
@@ -43,14 +45,12 @@ def tabout(
     if head != "": 
         head+=" "
         spaces-=len(head)   
-    if value=="" or autosize: 
+    if value=="":
+    # if value=="" or autosize: 
         separator=""
         final_text=text
-
-     
-
-    print(ident+setcolor(head,headcolor.lower())+setcolor(final_text,textcolor.lower())+" "*spaces,separator,setcolor(str(value),valuecolor.lower())+color.ENDC)
-
+    if silent==False:
+        print(ident+setcolor(head,headcolor.lower())+setcolor(final_text,textcolor.lower())+" "*spaces,separator,setcolor(str(value),valuecolor.lower())+color.ENDC)
 
 def main():
     tabout("Closed",textcolor="green",textsize=14,head="·",ident=2)
